@@ -50,6 +50,11 @@ services:
 volumes:
     php-fpm-sock:
     vendor:
+      driver: local
+      driver_opts:
+        type: none
+        device: ${PWD}/${VENDOR_PATH}
+        o: bind
 networks:
     webnet:
         driver: bridge
