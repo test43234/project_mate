@@ -9,12 +9,12 @@ RUN pacman --noconfirm -Sy archlinux-keyring; \
 RUN pacman --noconfirm -S apache ;\
 	mkdir -p /var/log/apache2; \
 	mkdir -p /var/www/html/; \
-	mkdir -p /etc/httpd/conf/vhosts; 
+	mkdir -p /etc/httpd/vhosts; 
+	
+RUN touch /var/log/apache2/apache_err.log; \
+      chown http:http /var/log/apache2/apache_err.log;
 
 RUN pacman --noconfirm -S vim man
-
-COPY httpd.conf /etc/httpd/conf/
-COPY vhosts/bootstrap.conf.vhost /etc/httpd/conf/vhosts/
 
 EXPOSE 80
 
