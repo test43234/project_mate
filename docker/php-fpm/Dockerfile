@@ -26,6 +26,7 @@ RUN curl -sS https://getcomposer.org/installer | php; \
 
 COPY composer.json /var/www/html/
 COPY ./docker/php-fpm/config/php/php.ini /etc/php/
+COPY ./docker/php-fpm/config/php/php-cli.ini /etc/php/
 
 RUN mkdir -p /var/www/html/public; \
     cd /var/www/html/; \

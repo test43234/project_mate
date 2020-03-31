@@ -9,9 +9,9 @@ services:
         container_name: "php-fpm"
         volumes:
             - ./php-fpm/config/php:/etc/php
-            # - ../vendor:/var/www/html/vendor
             - ${PWD}/../composer.json:/var/www/html/composer.json
             - ../src:/var/www/html/public
+            - ../private:/var/www/html/private
             - vendor:/var/www/html/vendor
             - php-fpm-sock:/run/php-fpm
         networks:
@@ -27,7 +27,6 @@ services:
             - ./logs:/var/log/apache2
             - ./apache2/config/vhosts:/etc/httpd/vhosts/
             - ./apache2/config/conf:/etc/httpd/conf
-            # - ../vendor:/var/www/html/vendor
             - ../src:/var/www/html/public
             - vendor:/var/www/html/vendor
             - php-fpm-sock:/run/php-fpm
@@ -44,8 +43,6 @@ services:
     #     container_name: "mysql"
     #     volumes:
     #         - mysql-data:/var/lib/mysql
-    #     ports:
-    #         - "3307:3306"
     #     networks:
     #         webnet:
     #             ipv4_address: 172.25.0.21
