@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome to Project Mate</title>
+
 </head>
 
 <body>
-    <h1>
-      Welcome {{ name }}! <br>
-    </h1>
-    <p>
-    This is Project Mate! 
-    </p>
-
-    You have {{ projectCount }} new {{ project }}.
+<img src="{{ assetpath }}/lion-logo.jpg" alt="" width="160" height="160">
+<p>Please register!</p>
+<form method="post" action="./userPage.php" name="Register">
+  <div class="form-element">
+    <label>Email</label>
+    <input type="email" name="email" required />
+  </div>
+  <div class="form-element">
+    <label>Password</label>
+    <input type="password" name="password" required />
+  </div>
+  <button type="submit" name="register" value="register">Register</button>
+</form>
 
 </body>
-
 </html>
