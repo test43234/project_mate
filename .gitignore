@@ -1,3 +1,5 @@
 vendor/
 .DS_Store
+stats/
 docker/logs
+private/

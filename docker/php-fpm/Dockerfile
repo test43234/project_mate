@@ -16,9 +16,11 @@ RUN pacman --noconfirm -Syu php php-fpm php-memcached php-gd autoconf m4 grep ; 
 
 RUN curl -O https://pear.php.net/go-pear.phar; \
   /usr/bin/php -d detect_unicode=0 go-pear.phar
+
 RUN pacman --noconfirm -Syu php-grpc ;
 
 RUN pecl install grpc;
+
 RUN curl -sS https://getcomposer.org/installer | php; \
       mv composer.phar /usr/local/bin/composer
 
